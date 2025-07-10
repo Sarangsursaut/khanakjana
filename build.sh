@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Install Python packages
+# Step 1: Install Python dependencies
 pip install -r requirements.txt
 
-# Install Tailwind dependencies
+# Step 2: Build Tailwind CSS (in z_dev folder)
+cd z_dev
 npm install
-
-# Build Tailwind CSS
 npm run prod
+cd ..
 
-# Collect Django static files
+# Step 3: Collect Django static files
 python manage.py collectstatic --noinput
